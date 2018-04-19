@@ -1,0 +1,16 @@
+C:\Users\User\Desktop\P304\completed code\c#\c#tapsiriq\28-02-2018-shamilym\Amlak\Amlak\bin\Debug\Amlak.exe.config
+C:\Users\User\Desktop\P304\completed code\c#\c#tapsiriq\28-02-2018-shamilym\Amlak\Amlak\bin\Debug\Amlak.exe
+C:\Users\User\Desktop\P304\completed code\c#\c#tapsiriq\28-02-2018-shamilym\Amlak\Amlak\bin\Debug\Amlak.pdb
+C:\Users\User\Desktop\P304\completed code\c#\c#tapsiriq\28-02-2018-shamilym\Amlak\Amlak\obj\Debug\Amlak.Admin.resources
+C:\Users\User\Desktop\P304\completed code\c#\c#tapsiriq\28-02-2018-shamilym\Amlak\Amlak\obj\Debug\Amlak.ADS.resources
+C:\Users\User\Desktop\P304\completed code\c#\c#tapsiriq\28-02-2018-shamilym\Amlak\Amlak\obj\Debug\Amlak.Form1.resources
+C:\Users\User\Desktop\P304\completed code\c#\c#tapsiriq\28-02-2018-shamilym\Amlak\Amlak\obj\Debug\Amlak.Properties.Resources.resources
+C:\Users\User\Desktop\P304\completed code\c#\c#tapsiriq\28-02-2018-shamilym\Amlak\Amlak\obj\Debug\Amlak.Search.resources
+C:\Users\User\Desktop\P304\completed code\c#\c#tapsiriq\28-02-2018-shamilym\Amlak\Amlak\obj\Debug\Amlak.csproj.GenerateResource.Cache
+C:\Users\User\Desktop\P304\completed code\c#\c#tapsiriq\28-02-2018-shamilym\Amlak\Amlak\obj\Debug\Amlak.exe
+C:\Users\User\Desktop\P304\completed code\c#\c#tapsiriq\28-02-2018-shamilym\Amlak\Amlak\obj\Debug\Amlak.pdb
+C:\Users\User\Desktop\P304\completed code\c#\c#tapsiriq\28-02-2018-shamilym\Amlak\Amlak\bin\Debug\EntityFramework.dll
+C:\Users\User\Desktop\P304\completed code\c#\c#tapsiriq\28-02-2018-shamilym\Amlak\Amlak\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\User\Desktop\P304\completed code\c#\c#tapsiriq\28-02-2018-shamilym\Amlak\Amlak\bin\Debug\EntityFramework.xml
+C:\Users\User\Desktop\P304\completed code\c#\c#tapsiriq\28-02-2018-shamilym\Amlak\Amlak\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\User\Desktop\P304\completed code\c#\c#tapsiriq\28-02-2018-shamilym\Amlak\Amlak\obj\Debug\Amlak.csprojResolveAssemblyReference.cache

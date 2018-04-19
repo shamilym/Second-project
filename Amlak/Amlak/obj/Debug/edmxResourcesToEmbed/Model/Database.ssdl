@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MaklerModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Amlak">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Type" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Area">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="City" Type="nvarchar" MaxLength="50" />
+    <Property Name="District" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Elan">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Amlakid" Type="int" />
+    <Property Name="Condition" Type="nvarchar" MaxLength="50" />
+    <Property Name="Request" Type="nvarchar" MaxLength="50" />
+    <Property Name="Areaid" Type="int" />
+    <Property Name="Personalid" Type="int" />
+    <Property Name="Client" Type="nvarchar" MaxLength="50" />
+    <Property Name="C_Telefon" Type="int" />
+    <Property Name="Price" Type="money" />
+    <Property Name="Room" Type="int" />
+    <Property Name="Note" Type="nvarchar" MaxLength="50" />
+    <Property Name="Status" Type="nvarchar" MaxLength="50" />
+    <Property Name="DateIn" Type="date" />
+    <Property Name="DateOut" Type="date" />
+    <Property Name="Buyer" Type="nvarchar" MaxLength="50" />
+    <Property Name="B_Telefon" Type="int" />
+  </EntityType>
+  <EntityType Name="Personal">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Makler" Type="nvarchar" MaxLength="50" />
+    <Property Name="Telefon" Type="nvarchar" MaxLength="50" />
+    <Property Name="Status" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_Elan_Amlak">
+    <End Role="Amlak" Type="Self.Amlak" Multiplicity="0..1" />
+    <End Role="Elan" Type="Self.Elan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Amlak">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Elan">
+        <PropertyRef Name="Amlakid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Elan_Area">
+    <End Role="Area" Type="Self.Area" Multiplicity="0..1" />
+    <End Role="Elan" Type="Self.Elan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Area">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Elan">
+        <PropertyRef Name="Areaid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Elan_Personal">
+    <End Role="Personal" Type="Self.Personal" Multiplicity="0..1" />
+    <End Role="Elan" Type="Self.Elan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Personal">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Elan">
+        <PropertyRef Name="Personalid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="MaklerModelStoreContainer">
+    <EntitySet Name="Amlak" EntityType="Self.Amlak" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Area" EntityType="Self.Area" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Elan" EntityType="Self.Elan" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Personal" EntityType="Self.Personal" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Elan_Amlak" Association="Self.FK_Elan_Amlak">
+      <End Role="Amlak" EntitySet="Amlak" />
+      <End Role="Elan" EntitySet="Elan" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Elan_Area" Association="Self.FK_Elan_Area">
+      <End Role="Area" EntitySet="Area" />
+      <End Role="Elan" EntitySet="Elan" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Elan_Personal" Association="Self.FK_Elan_Personal">
+      <End Role="Personal" EntitySet="Personal" />
+      <End Role="Elan" EntitySet="Elan" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

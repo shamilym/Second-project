@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MaklerModelStoreContainer" CdmEntityContainer="MaklerEntities">
+    <EntitySetMapping Name="Amlak">
+      <EntityTypeMapping TypeName="MaklerModel.Amlak">
+        <MappingFragment StoreEntitySet="Amlak">
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Area">
+      <EntityTypeMapping TypeName="MaklerModel.Area">
+        <MappingFragment StoreEntitySet="Area">
+          <ScalarProperty Name="District" ColumnName="District" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Elan">
+      <EntityTypeMapping TypeName="MaklerModel.Elan">
+        <MappingFragment StoreEntitySet="Elan">
+          <ScalarProperty Name="B_Telefon" ColumnName="B_Telefon" />
+          <ScalarProperty Name="Buyer" ColumnName="Buyer" />
+          <ScalarProperty Name="DateOut" ColumnName="DateOut" />
+          <ScalarProperty Name="DateIn" ColumnName="DateIn" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="Room" ColumnName="Room" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="C_Telefon" ColumnName="C_Telefon" />
+          <ScalarProperty Name="Client" ColumnName="Client" />
+          <ScalarProperty Name="Personalid" ColumnName="Personalid" />
+          <ScalarProperty Name="Areaid" ColumnName="Areaid" />
+          <ScalarProperty Name="Request" ColumnName="Request" />
+          <ScalarProperty Name="Condition" ColumnName="Condition" />
+          <ScalarProperty Name="Amlakid" ColumnName="Amlakid" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Personal">
+      <EntityTypeMapping TypeName="MaklerModel.Personal">
+        <MappingFragment StoreEntitySet="Personal">
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+          <ScalarProperty Name="Makler" ColumnName="Makler" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MaklerModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="MaklerEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Amlak" EntityType="MaklerModel.Amlak" />
+    <EntitySet Name="Area" EntityType="MaklerModel.Area" />
+    <EntitySet Name="Elan" EntityType="MaklerModel.Elan" />
+    <EntitySet Name="Personal" EntityType="MaklerModel.Personal" />
+    <AssociationSet Name="FK_Elan_Amlak" Association="MaklerModel.FK_Elan_Amlak">
+      <End Role="Amlak" EntitySet="Amlak" />
+      <End Role="Elan" EntitySet="Elan" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Elan_Area" Association="MaklerModel.FK_Elan_Area">
+      <End Role="Area" EntitySet="Area" />
+      <End Role="Elan" EntitySet="Elan" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Elan_Personal" Association="MaklerModel.FK_Elan_Personal">
+      <End Role="Personal" EntitySet="Personal" />
+      <End Role="Elan" EntitySet="Elan" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Amlak">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Elan" Relationship="MaklerModel.FK_Elan_Amlak" FromRole="Amlak" ToRole="Elan" />
+  </EntityType>
+  <EntityType Name="Area">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="District" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Elan" Relationship="MaklerModel.FK_Elan_Area" FromRole="Area" ToRole="Elan" />
+  </EntityType>
+  <EntityType Name="Elan">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Amlakid" Type="Int32" />
+    <Property Name="Condition" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Request" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Areaid" Type="Int32" />
+    <Property Name="Personalid" Type="Int32" />
+    <Property Name="Client" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="C_Telefon" Type="Int32" />
+    <Property Name="Price" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Room" Type="Int32" />
+    <Property Name="Note" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DateIn" Type="DateTime" Precision="0" />
+    <Property Name="DateOut" Type="DateTime" Precision="0" />
+    <Property Name="Buyer" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="B_Telefon" Type="Int32" />
+    <NavigationProperty Name="Amlak" Relationship="MaklerModel.FK_Elan_Amlak" FromRole="Elan" ToRole="Amlak" />
+    <NavigationProperty Name="Area" Relationship="MaklerModel.FK_Elan_Area" FromRole="Elan" ToRole="Area" />
+    <NavigationProperty Name="Personal" Relationship="MaklerModel.FK_Elan_Personal" FromRole="Elan" ToRole="Personal" />
+  </EntityType>
+  <EntityType Name="Personal">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Makler" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Telefon" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Elan" Relationship="MaklerModel.FK_Elan_Personal" FromRole="Personal" ToRole="Elan" />
+  </EntityType>
+  <Association Name="FK_Elan_Amlak">
+    <End Type="MaklerModel.Amlak" Role="Amlak" Multiplicity="0..1" />
+    <End Type="MaklerModel.Elan" Role="Elan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Amlak">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Elan">
+        <PropertyRef Name="Amlakid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Elan_Area">
+    <End Type="MaklerModel.Area" Role="Area" Multiplicity="0..1" />
+    <End Type="MaklerModel.Elan" Role="Elan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Area">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Elan">
+        <PropertyRef Name="Areaid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Elan_Personal">
+    <End Type="MaklerModel.Personal" Role="Personal" Multiplicity="0..1" />
+    <End Type="MaklerModel.Elan" Role="Elan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Personal">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Elan">
+        <PropertyRef Name="Personalid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

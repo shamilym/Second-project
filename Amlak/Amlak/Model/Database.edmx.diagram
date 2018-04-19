@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="55a0ba39e7394fb9aea3a5d9178b258f" Name="Diagram1">
+        <EntityTypeShape EntityType="MaklerModel.Amlak" Width="1.5" PointX="0.75" PointY="4.25" />
+        <EntityTypeShape EntityType="MaklerModel.Area" Width="1.5" PointX="0.75" PointY="7.5" />
+        <EntityTypeShape EntityType="MaklerModel.Elan" Width="1.5" PointX="3" PointY="2.625" />
+        <EntityTypeShape EntityType="MaklerModel.Personal" Width="1.5" PointX="0.75" PointY="0.75" />
+        <AssociationConnector Association="MaklerModel.FK_Elan_Amlak" />
+        <AssociationConnector Association="MaklerModel.FK_Elan_Area" />
+        <AssociationConnector Association="MaklerModel.FK_Elan_Personal" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
